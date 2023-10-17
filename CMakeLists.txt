@@ -76,19 +76,12 @@ ENDIF("${isSystemDir}" STREQUAL "-1")
 
 include(CPM)
 
-CPMFindPackage(
-    NAME fmt
-    GIT_TAG 10.1.1
-    GITHUB_REPOSITORY fmtlib/fmt
-    OPTIONS
-      "BUILD_SHARED_LIBS ON"
-)
-
 CPMAddPackage(
     NAME NuHepMC_CPPUtils
     GIT_TAG main
     GIT_REPOSITORY "https://github.com/NuHepMC/cpputils.git"
     OPTIONS "BUILTIN_HEPMC3 ON"
+      "NuHepMC_BUILD_STATIC_LIBS ON"
   )
 
 add_subdirectory(src/NuHepMC)
